@@ -1,2 +1,65 @@
 @import "../../bower_components/bootstrap/less/bootstrap";
 @import "../../bower_components/bootstrap/less/theme";
+@import "../../bower_components/less-elements/elements";
+@import "../../bower_components/fontawesome/less/font-awesome";
+
+
+@import "variables";
+@import "colors";
+
+div.box4{
+  span {
+    color: crimson;
+    ul{
+      li {
+        color: orange;
+        font-weight:bold;
+      }
+    }
+  }
+}
+
+/*
+.mybox {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #333;
+}
+
+*/
+
+.mybox {
+/*  width: @box-height; */
+  height: @box-width;
+  border: @box-border-size @box-border-color @box-border-type;
+}
+
+div.box1  {
+/*  width: 50px;
+  height: 50px;
+  border: 1px solid #333; */
+  .mybox;
+  background-color: @corporate-color;
+  .border-radius(@box-border-radius,30px,@box-border-radius,50px);
+  &:hover{
+    background-color: lighten(@corporate-color,50%);
+  }
+}
+
+div.box2  {
+/*  width: 50px;
+  height: 50px;
+  border: 1px solid #333; */
+  .mybox; 
+  background-color: lighten(@corporate-color,30%);
+  .border-radius(@box-border-radius,@box-border-radius,@box-border-radius,@box-border-radius);
+  .gradient(#FFF,@mycolor,lighten(@mycolor,30%))
+}
+
+div.box3  {
+/*  width: 50px;
+  height: 50px;
+  border: 1px solid #333; */
+  .mybox;
+  background-color: darken(@corporate-color,10%);
+}
